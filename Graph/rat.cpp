@@ -1,18 +1,10 @@
-// { Driver Code Starts
-// Initial template for C++
-
 #include <bits/stdc++.h>
-using namespace std;
-
-// } Driver Code Ends
-// User function template for C++
 
 class Solution
 {
 public:
     vector<string> findPath(vector<vector<int>> &m, int n)
     {
-
         bool visited[n][n];
         memset(visited, false, sizeof(visited));
 
@@ -46,28 +38,20 @@ public:
                 {
                     visited[row][column] = true;
                     if (row < n - 1)
-                    {
                         if (m[row + 1][column] == 1 && !visited[row + 1][column])
                             q.push({{row + 1, column}, 'R'});
-                    }
 
                     if (row > 0)
-                    {
                         if (m[row - 1][column] == 1 && !visited[row - 1][column])
                             q.push({{row - 1, column}, 'L'});
-                    }
 
                     if (column < n - 1)
-                    {
                         if (m[row][column + 1] == 1 && !visited[row][column + 1])
                             q.push({{row, column + 1}, 'D'});
-                    }
 
                     if (column > 0)
-                    {
                         if (m[row][column - 1] == 1 && !visited[row][column - 1])
                             q.push({{row, column - 1}, 'U'});
-                    }
                 }
             }
         }
@@ -88,12 +72,9 @@ int main()
         cin >> n;
         vector<vector<int>> m(n, vector<int>(n, 0));
         for (int i = 0; i < n; i++)
-        {
             for (int j = 0; j < n; j++)
-            {
                 cin >> m[i][j];
-            }
-        }
+
         Solution obj;
         vector<string> result = obj.findPath(m, n);
         if (result.size() == 0)
@@ -104,4 +85,4 @@ int main()
         cout << endl;
     }
     return 0;
-} // } Driver Code Ends
+} 
