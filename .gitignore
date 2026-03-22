@@ -1,3 +1,10 @@
 *.out
 *.exe
 a.*
+
+# Go compiled binaries
+golang/basics/arrays/arrays
+golang/basics/big-numbers/big-numbers
+golang/basics/first-class-functions/first-class-functions
+golang/basics/methods/methods
+golang/advanced/nil/nil-handling
